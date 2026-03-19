@@ -184,7 +184,7 @@ Below is a known-good working example of the required JSON structure for a Param
 ```
 
 
-###EXAMPLE 2 - Chair (One-Shot)
+### EXAMPLE 2 - Chair (One-Shot)
 Below is a known-good working example of a chair.
 
 ```json
@@ -397,4 +397,4 @@ Below is a known-good working example of a chair.
     }
   ]
 }
-```json
+```
