@@ -1,7 +1,3 @@
-Here is the updated `README.md` with the addition of the AI System Prompt link under the JSON tool section. GitHub will automatically resolve the relative link so users can click it directly from your repository's homepage.
-
-***
-
 # JonoTools for pyRevit
 
 **JonoTools** is a custom [pyRevit](https://github.com/eirannejad/pyRevit) extension designed to automate repetitive workflows in Autodesk Revit, with a heavy focus on Family creation, auditing, and batch-cleaning.
@@ -19,9 +15,9 @@ Here is the updated `README.md` with the addition of the AI System Prompt link u
 To install this extension into your pyRevit environment:
 
 1. Open your command prompt (CMD) or terminal.
-2. Use the pyRevit CLI to add the repository as a custom extension. Run the following command (replace `<URL_TO_YOUR_REPO>` with the actual clone URL of your GitHub repo):
+2. Use the pyRevit CLI to add the repository as a custom extension by running the following command:
    ```bash
-   pyrevit extend ui JonoTools https://github.com/manicooller/jonotools
+   pyrevit extend ui JonoTools https://github.com/manicooller/jonotools.git
    ```
 3. Alternatively, you can clone this repository directly into your custom pyRevit extensions folder (configurable in pyRevit settings).
 4. Reload pyRevit (`Ctrl + F5` or use the Reload button in the pyRevit ribbon).
@@ -59,8 +55,8 @@ Tools for programmatic family generation.
 *   **JSON to Family (`JSON to Family`)**
     *   **Context:** Family Editor
     *   **Description:** A parametric family generator. When clicked, a resizable text window appears allowing you to paste a JSON schema. Once you click "Create", the script reads the JSON to automatically build Reference Planes, Dimensions, Parameters, and Geometry (Extrusions, Sweeps, Revolves, Blends, and Voids). 
-    *   🤖 **AI Generation Prompt:** Included in this repo is a [System Prompt for LLMs](JonoTools.extension/JonoTools.tab/JSON.Panel/JSONToFamily.pushbutton/SYSTEM%20PROMPT.md). You can supply this prompt to AI models (like ChatGPT or Claude) along with images, sketches, or text descriptions. The AI will act as a "Revit Family JSON Schema Generator" and output the exact JSON code needed for this tool to build your family.
     *   *Note: Includes a constraint engine that automatically locks geometry to reference planes and handles sequential void cutting.*
+    *   🤖 **AI Generation Prompt:** Included in this repo is a [System Prompt for LLMs](JonoTools.extension/JonoTools.tab/JSON.Panel/JSONToFamily.pushbutton/SYSTEM%20PROMPT.md). You can supply this prompt to AI models (like ChatGPT or Claude) along with images, sketches, or text descriptions. The AI will act as a "Revit Family JSON Schema Generator" and output the exact JSON code needed for this tool to build your family.
 
 ### 📁 Project Panel
 Tools for auditing and managing the project environment.
