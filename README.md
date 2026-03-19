@@ -1,0 +1,73 @@
+# JonoTools for pyRevit
+
+**JonoTools** is a custom [pyRevit](https://github.com/eirannejad/pyRevit) extension designed to automate repetitive workflows in Autodesk Revit, with a heavy focus on Family creation, auditing, and batch-cleaning.
+
+⚠️ **DISCLAIMER & WARNING** ⚠️
+> **THIS IS A WORK IN PROGRESS.** 
+> Use these tools at your own risk. I am not responsible for any data loss, model corruption, or issues that arise from the use of this extension. 
+> 
+> **CRITICAL WARNING:** Several scripts in this repository are highly destructive and are specifically designed to **permanently delete project/family information, parameters, and materials.** Always test these scripts on detached models or ensure you have a recent backup before running them in a production environment.
+
+---
+
+## 🛠️ Installation
+
+To install this extension into your pyRevit environment:
+
+1. Open your command prompt (CMD) or terminal.
+2. Use the pyRevit CLI to add the repository as a custom extension. Run the following command (replace `<URL_TO_YOUR_REPO>` with the actual clone URL of your GitHub repo):
+   ```bash
+   pyrevit extend ui JonoTools <URL_TO_YOUR_REPO>
+   ```
+3. Alternatively, you can clone this repository directly into your custom pyRevit extensions folder (configurable in pyRevit settings).
+4. Reload pyRevit (`Ctrl + F5` or use the Reload button in the pyRevit ribbon).
+
+---
+
+## 🧰 Included Tools
+
+The tools are organized into three main panels on the pyRevit ribbon: **Families**, **JSON**, and **Project**.
+
+### 📁 Families Panel
+Tools designed to clean and manage Revit Family files.
+
+*   **Purge Shared Params (`Purge Shared Params`)**
+    *   **Context:** Family Editor
+    *   **Description:** Scans the active family document and permanently purges all Shared Parameters *except* for a hardcoded whitelist of essential GUIDs. Great for cleaning up vendor families or enforcing company standards.
+    *   *Warning: This action cannot be undone and drops parameter data.*
+
+*   **Clear Identity Data (`Clear Identity Data`)**
+    *   **Context:** Family Editor
+    *   **Description:** Wipes the formulas and values from standard built-in Identity Data parameters (e.g., Manufacturer, Description, Cost, URL, Assembly Code) in the active family. 
+    *   *Warning: Instantly deletes proprietary or unwanted identity data values.*
+
+*   **Purge Non-Param Materials (`Purge Non-Param Materials`)**
+    *   **Context:** Project Environment
+    *   **Description:** A powerful batch tool that searches the active project for loadable families of selected categories. It opens each family in the background, checks which materials are *not* mapped to a family parameter, deletes those unused materials, and reloads the family back into the project. 
+    *   *Warning: Modifies families currently loaded in your project.*
+
+### 📁 JSON Panel
+Tools for programmatic family generation.
+
+*   **JSON to Family (`JSON to Family`)**
+    *   **Context:** Family Editor
+    *   **Description:** A parametric family generator. It reads a provided JSON schema file (`table_family.json`) to automatically build Reference Planes, Dimensions, Parameters, and Geometry (Extrusions, Sweeps, Revolves, Blends, and Voids). 
+    *   *Note: Includes a constraint engine that automatically locks geometry to reference planes and handles sequential void cutting.*
+
+### 📁 Project Panel
+Tools for auditing and managing the project environment.
+
+*   **Check Family Params (`Check Family Params`)**
+    *   **Context:** Project Environment
+    *   **Description:** Audits loadable families within your project. You select the categories to check, and the script verifies if those families contain specific required parameters (e.g., Height, Width, Depth) by checking both Shared Parameter GUIDs and Built-In names. It outputs a report of any families missing the required data.
+
+*   **Hide Links (`Hide Links`)**
+    *   **Context:** Project Environment
+    *   **Description:** A quick visibility utility that instantly applies a "Temporary Hide/Isolate" to all Revit Link instances in the active view. Perfect for quickly decluttering a view to work on the native model.
+
+---
+
+## 👨‍💻 Author
+**Jonathan Bourne**
+
+*Developed for use with Autodesk Revit and the pyRevit framework.*
