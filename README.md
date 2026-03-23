@@ -17,7 +17,7 @@ To install this extension into your pyRevit environment:
 1. Open your command prompt (CMD) or terminal.
 2. Use the pyRevit CLI to add the repository as a custom extension by running the following command:
    ```bash
-   pyrevit extend ui JonoTools https://github.com/manicooller/jonotools.git
+   pyrevit extend ui JonoTools https://github.com/manicooller/jonotools.git --branch=main
    ```
 3. Alternatively, you can clone this repository directly into your custom pyRevit extensions folder (configurable in pyRevit settings).
 4. Reload pyRevit (`Ctrl + F5` or use the Reload button in the pyRevit ribbon).
