@@ -56,7 +56,7 @@ Tools for programmatic family generation.
     *   **Context:** Family Editor
     *   **Description:** A parametric family generator. When clicked, a resizable text window appears allowing you to paste a JSON schema. Once you click "Create", the script reads the JSON to automatically build Reference Planes, Dimensions, Parameters, and Geometry (Extrusions, Sweeps, Revolves, Blends, and Voids). 
     *   *Note: Includes a constraint engine that automatically locks geometry to reference planes and handles sequential void cutting.*
-    *   🤖 **AI Generation Prompt:** Included in this repo is a [System Prompt for LLMs](JonoTools.extension/JonoTools.tab/JSON.Panel/JSONToFamily.pushbutton/SYSTEM%20PROMPT.md). You can supply this prompt to AI models (like ChatGPT or Claude) along with images, sketches, or text descriptions. The AI will act as a "Revit Family JSON Schema Generator" and output the exact JSON code needed for this tool to build your family.
+    *   🤖 **AI Generation Prompt:** Included in this repo is a [System Prompt for LLMs](JonoTools.tab/JSON.Panel/JSONToFamily.pushbutton/SYSTEM%20PROMPT.md). You can supply this prompt to AI models (like ChatGPT or Claude) along with images, sketches, or text descriptions. The AI will act as a "Revit Family JSON Schema Generator" and output the exact JSON code needed for this tool to build your family.
 
 ### 📁 Project Panel
 Tools for auditing and managing the project environment.
